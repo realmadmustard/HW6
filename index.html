@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS ANIMATION</title>
+	<style>
+		html { overflow-x: hidden; }
+		div, label {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			border: 1px solid black;
+			border-radius: 5px;
+			line-height: 200px;
+			text-align: center;
+		}
+		.block1, .block2, .block3 {
+			transition: 1s;
+			top: 0;
+		}
+		.block1 {
+			left: 150px;
+		}
+		.block2 {
+			left: 40%;
+		}
+		.block3 {
+			right: 150px;
+		}
+		.button1, #button2, .lbl4Inpt, .button3 {
+			transition: 1s;
+			bottom: 0;
+		}
+		.button1 {
+			left: 150px;
+		}
+		#button2, .lbl4Inpt {
+			left: 40%;
+		}
+		.button3 {
+			right: 150px;
+		}
+		.button1:hover + .block1 {
+			transition: 1s;
+			transform: rotate(45deg);
+			top: 150px;
+		}
+		.button1:hover {
+			transition: 1s;
+			background-color: #ccc;
+		}
+		#button2:checked + .block2 {
+			transition: 1s;
+			top: 150px;
+		}
+		#button2:checked ~ .lbl4Inpt{
+			transition: 1s;
+			background-color: #ccc;
+		}
+		.button3:active + .block3 {
+			animation: MOOVE 1.5s infinite;
+		}
+		.button3:active {
+			animation: CHAAANGE 1.5s infinite;
+		}
+		@keyframes MOOVE {
+			0% {right: 150px;}
+			50% {right: -210px;}
+			100% {right: 150px;}
+		}
+		@keyframes CHAAANGE {
+			0% {background-color: #fff;}
+			50% {background-color: #ccc;}
+			100% {background-color: #fff;}
+		}
+	</style>
+</head>
+<body>
+	<div class="button1">BUTT1</div>
+	<div class="block1">1</div>
+	<input type="checkbox" id="button2" hidden>	
+	<div class="block2">2</div>
+	<label for="button2" class="lbl4Inpt">BUTT2</label>
+	<div class="button3">BUTT3</div>
+	<div class="block3">3</div>
+</body>
+</html>
